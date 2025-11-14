@@ -1,0 +1,329 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background: #F0F4FF;
+    color: #333;
+}
+
+.fade {
+    animation: fadeIn 0.6s ease;
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* LOGIN PAGE */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    width: 380px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.login-input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: 1px solid #CED4DA;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #7C91F9, #A0B0FF);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+/* DASHBOARD */
+.dashboard, .routine-page {
+    display: none;
+    padding: 30px;
+}
+
+.menu-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.menu-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: 0.3s;
+    border-left: 6px solid #7C91F9;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    background: linear-gradient(45deg, #FFFFFF, #F1F3FF);
+}
+
+/* ROUTINE PAGE */
+.back-btn {
+    padding: 10px 18px;
+    background: #D9DDF9;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.routine-title {
+    font-size: 28px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #6A7FDB;
+}
+
+.timer {
+    margin-top: 30px;
+    font-size: 55px;
+    color: #3A4ABF;
+    text-align: center;
+}
+
+.timer-controls button {
+    padding: 14px 22px;
+    margin: 10px;
+    background: #7C91F9;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Global */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    background-color: #F0F4FF;
+    color: #333;
+}
+
+.fade {
+    animation: fadeIn 0.6s ease;
+}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* LOGIN PAGE */
+.login-container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    background: white;
+    padding: 40px;
+    width: 380px;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.login-input {
+    width: 100%;
+    padding: 14px;
+    margin-bottom: 18px;
+    border-radius: 10px;
+    border: 1px solid #CED4DA;
+}
+
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(45deg, #7C91F9, #A0B0FF);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+}
+
+/* DASHBOARD */
+.dashboard, .routine-page {
+    display: none;
+    padding: 30px;
+}
+
+.menu-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.menu-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    cursor: pointer;
+    transition: 0.3s;
+    border-left: 6px solid #7C91F9;
+}
+
+.menu-card:hover {
+    transform: translateY(-6px);
+    background: linear-gradient(45deg, #FFFFFF, #F1F3FF);
+}
+
+/* ROUTINE PAGE */
+.back-btn {
+    padding: 10px 18px;
+    background: #D9DDF9;
+    border-radius: 8px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.routine-title {
+    font-size: 28px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #6A7FDB;
+}
+
+.timer {
+    margin-top: 30px;
+    font-size: 55px;
+    color: #3A4ABF;
+    text-align: center;
+}
+
+.timer-controls button {
+    padding: 14px 22px;
+    margin: 10px;
+    background: #7C91F9;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Tambahan styling untuk indikator klik pada menu login */
+.login-show-btn {
+    display: inline-block;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: #1976d2;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: transform .12s ease, box-shadow .12s ease;
+}
+.login-show-btn.menu-clicked {
+    box-shadow: 0 6px 18px rgba(25,118,210,0.25);
+    transform: translateY(-2px);
+}
+
+/* input ketika diklik/focus */
+.login-input.input-clicked,
+.login-input:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(25,118,210,0.12);
+    border-color: #1976d2;
+}
+
+/* status kecil di label (tanda telah diklik) */
+.input-status {
+    display: inline-block;
+    width: 18px;
+    text-align: center;
+    font-weight: 700;
+    margin-left: 6px;
+    color: transparent;
+    transition: color .12s ease;
+}
+.input-status.active {
+    color: #4caf50; /* hijau tanda aktif */
+}
+
+/* rapikan jarak */
+.input-label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+    color: #333;
+}
+.login-fields .login-btn {
+    margin-top: 14px;
+}
+/* akhir tambahan */
+
+/* DARK MODE STYLES */
+.dark-mode {
+    background-color: #0b1220;
+    color: #e6eef8;
+}
+
+.dark-mode .login-box,
+.dark-mode .menu-card,
+.dark-mode .routine-page {
+    background: #0f1724;
+    color: #e6eef8;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    border-left-color: rgba(255,255,255,0.06);
+}
+
+.dark-card {
+    background: linear-gradient(135deg,#0b1220,#111827);
+    color: #e6eef8;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+    border-left-color: rgba(255,255,255,0.06);
+}
+
+.dark-mode .login-input,
+.dark-mode .todo-input,
+.dark-mode .notes-box,
+.dark-mode textarea {
+    background: #071020;
+    border: 1px solid #22303b;
+    color: #e6eef8;
+}
+
+.dark-mode .login-btn,
+.dark-mode .toggle-theme-btn,
+.dark-mode .timer-controls button,
+.dark-mode .todo-add-btn,
+.dark-mode .notes-save-btn,
+.dark-mode .login-show-btn {
+    background: linear-gradient(45deg,#4f46e5,#7c3aed);
+    color: #fff;
+    border: none;
+}
+
+.toggle-theme-btn {
+    margin-bottom: 12px;
+}
+
+/* small adjustments to ensure contrast on focus */
+.dark-mode .login-input:focus,
+.dark-mode textarea:focus {
+    box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+    border-color: #7c3aed;
+}

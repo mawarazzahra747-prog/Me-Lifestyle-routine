@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Routine</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+    <!-- LOGIN PAGE -->
+    <div class="login-container fade" id="loginPage">
+        <div class="login-box">
+            <h2>🌟 Daily Routine</h2>
+            <p class="login-subtitle">Upgrade hidupmu setiap hari</p>
+
+            <!-- Tombol awal: tampilkan field saat diklik -->
+            <button id="showLoginBtn" class="login-show-btn" onclick="showLoginFields()">Masuk</button>
+
+            <!-- Fields login disembunyikan awalnya -->
+            <div class="login-fields" id="loginFields" style="display:none;">
+                <label class="input-label" for="username">Username <span id="usernameStatus" class="input-status"></span></label>
+                <input class="login-input" type="text" id="username" placeholder="Username"
+                       onfocus="markClicked('username')" onblur="unmarkClicked('username')">
+
+                <label class="input-label" for="password">Password <span id="passwordStatus" class="input-status"></span></label>
+                <input class="login-input" type="password" id="password" placeholder="Password"
+                       onfocus="markClicked('password')" onblur="unmarkClicked('password')">
+
+                <button class="login-btn" onclick="login()">Masuk</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <div class="dashboard fade" id="dashboard" style="display:none;">
+        <h1>Selamat Datang 👋</h1>
+        <button class="toggle-theme-btn" onclick="toggleTheme()">🌗 Dark Mode</button>
+
+        <p>Pilih aktivitas untuk hari ini</p>
+
+        <div class="menu-grid">
+
+            <div class="menu-card" onclick="openRoutine('Morning Kickstart')">
+                <h3>🌅 Morning Kickstart</h3>
+                <p>Mulai hari dengan energi positif</p>
+            </div>
+
+            <div class="menu-card" onclick="openRoutine('Deep Work')">
+                <h3>🧠 Deep Work</h3>
+                <p>Fokus tanpa distraksi</p>
+            </div>
+
+            <div class="menu-card" onclick="openRoutine('Skill Upgrade')">
+                <h3>📚 Skill Upgrade</h3>
+                <p>Kembangkan kemampuan baru</p>
+            </div>
+
+            <div class="menu-card" onclick="openRoutine('Warm Up')">
+                <h3>🔥 Warm Up</h3>
+                <p>Bangunkan tubuhmu</p>
+            </div>
+
+            <div class="menu-card" onclick="openRoutine('Meditation')">
+                <h3>🧘 Meditation</h3>
+                <p>Tenangkan pikiran</p>
+            </div>
+
+            <div class="menu-card" onclick="openRoutine('Workout')">
+                <h3>💪 Workout</h3>
+                <p>Latihan fisik harian</p>
+            </div>
+
+            <div class="menu-card" onclick="openRoutine('Reading')">
+                <h3>📖 Reading</h3>
+                <p>Bacaan berkualitas</p>
+            </div>
+
+            <div class="menu-card" onclick="openRoutine('Planning')">
+                <h3>🗂️ Daily Planning</h3>
+                <p>Atur jadwal harianmu</p>
+            </div>
+
+            <div class="menu-card" onclick="openRoutine('Night Reflection')">
+                <h3>🌙 Night Reflection</h3>
+                <p>Evaluasi sebelum tidur</p>
+            </div>
+
+            <div class="menu-card" onclick="openRoutine('To-Do List')">
+                <h3>📝 To-Do List</h3>
+                <p>Atur tugas harianmu</p>
+            </div>
+
+            <div class="menu-card" onclick="openRoutine('Daily Notes')">
+                <h3>📒 Daily Notes</h3>
+                <p>Tulis catatan harianmu</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- ROUTINE DETAIL PAGE -->
+    <div class="routine-page fade" id="routinePage" style="display:none;">
+        <div class="back-btn" onclick="backToDashboard()">← Kembali</div>
+
+        <div class="routine-title" id="routineTitle"></div>
+
+        <!-- TIMER -->
+        <div class="timer" id="timer">00:00</div>
+
+        <div class="timer-controls">
+            <button onclick="startTimer()">Start</button>
+            <button onclick="pauseTimer()">Pause</button>
+            <button onclick="resetTimer()">Reset</button>
+        </div>
+
+        <!-- TO DO LIST -->
+        <div id="todoSection" style="display:none;">
+            <h3>Daftar Tugas</h3>
+            <input id="todoInput" class="todo-input" placeholder="Tambahkan tugas...">
+            <button onclick="addTodo()" class="todo-add-btn">Tambah</button>
+            <ul id="todoList"></ul>
+        </div>
+
+        <!-- DAILY NOTES -->
+        <div id="notesSection" style="display:none;">
+            <h3>Catatan Harian</h3>
+            <textarea id="dailyNotes" class="notes-box" placeholder="Tulis catatan di sini..."></textarea>
+            <button onclick="saveNotes()" class="notes-save-btn">Simpan Catatan</button>
+        </div>
+    </div>
+
+</body>
+</html>
